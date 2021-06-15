@@ -148,16 +148,13 @@ void loop() {
 
   //  Affichage de la raquette 1
   gb.display.setColor(BLUE);
+  gb.display.printf("Player 1 =  %d", compteurScore1);
   gb.display.fillRect(barrePositionX1, barrePositionY1, barreSizeX, barreSizeY);
 
   //  Affichage de la raquette 2
   gb.display.setColor(RED);
+  gb.display.printf("\nPlayer 2 =  %d", compteurScore2);
   gb.display.fillRect(barrePositionX2, barrePositionY2, barreSizeX, barreSizeY);
-
-  //  Affichage du score
-  gb.display.setColor(WHITE);
-  gb.display.printf("Score 1 =  %d", compteurScore1);
-  gb.display.printf("\nScore 2 =  %d", compteurScore2);
 
   //  rebond
   //gb.display.printf("\nReb 1   =  %d ", compteurReb1);
