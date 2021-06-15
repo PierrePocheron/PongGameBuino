@@ -5,21 +5,21 @@ int balleSpeedX = 1;
 int balleSpeedY = 1;
 
 //  Vitesse barre
-int barreSpeedY = 5;
+const int barreSpeedY = 5;
 
 //  Taille barre
-int barreSizeX = 2;
-int barreSizeY = 15;
+const int barreSizeX = 2;
+const int barreSizeY = 15;
 
 //  Objet balle
 int ballePositionX = gb.display.width()/2;
 int ballePositionY = gb.display.height()/2;
-int balleSize = 2;
+const int balleSize = 2;
 int ballColor = 0;
 
 //  Rebond balle
-int ballePixelBoundX = gb.display.width() - balleSize - barreSizeX;
-int ballePixelBoundY = gb.display.height() - balleSize - barreSizeY;
+const int ballePixelBoundX = gb.display.width() - balleSize - barreSizeX;
+const int ballePixelBoundY = gb.display.height() - balleSize - barreSizeY;
 
 //  Position barre 1
 int barrePositionX1 = 0;
