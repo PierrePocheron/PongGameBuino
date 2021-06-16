@@ -1,15 +1,19 @@
 #include <Gamebuino-Meta.h>
 
-//  Vitesse balle
-int balleSpeedX = 1;
-int balleSpeedY = 1;
 
-//  Vitesse barre
-const int barreSpeedY = 5;
+// ======== V A R  &  C O N S T ===========
+
 
 //  Taille barre
 const int barreSizeX = 2;
 const int barreSizeY = 15;
+
+//  Vitesse barre
+const int barreSpeedY = 5;
+
+//  Vitesse balle
+int balleSpeedX = 1;
+int balleSpeedY = 1;
 
 //  Objet balle
 int ballePositionX = gb.display.width()/2;
@@ -40,20 +44,11 @@ int compteurReb1 = 0;
 int compteurReb2 = 0;
 
 
-//  Func Setup
-void setup() {
-  gb.begin();
-}
+// ======== F U N C ===========
 
 
-//  Func Loop
-void loop() {
-  while (!gb.update());
-  gb.display.clear();
-
-  ballePositionX += balleSpeedX;
-  ballePositionY += balleSpeedY;
-
+void funcRebond()
+{
   //  Vérification balle rebond gauche
   if(ballePositionX < 0)
   {
@@ -91,8 +86,11 @@ void loop() {
       ballePositionX = gb.display.width()/2;
     }
   }
+}
 
 
+void funcDeplacementBalleBarre()
+{
   //  Déplacement balle Y
   if (ballePositionY < 0) {balleSpeedY = 1;}
   if (ballePositionY > ballePixelBoundY) {balleSpeedY = -1;}
@@ -131,6 +129,28 @@ void loop() {
       barrePositionY2 += barreSpeedY;
     }
   }
+}
+
+
+//  Func Setup
+void setup() {
+  gb.begin();
+}
+
+
+
+//  Func Loop
+void loop() {
+  while (!gb.update());
+  gb.display.clear();
+
+  ballePositionX += balleSpeedX;
+  ballePositionY += balleSpeedY;
+
+  funcRebond();
+
+  funcDeplacementBalleBarre();
+  
 
 
   
